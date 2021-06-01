@@ -15,5 +15,17 @@
   "bugs": {
     "url": "https://github.com/SteffTek/Tick.js/issues"
   },
-  "homepage": "https://github.com/SteffTek/Tick.js#readme"
+  "homepage": "https://github.com/SteffTek/Tick.js#readme",
+  "keywords": [
+    "nodejs",
+    "browser",
+    "js",
+    "native",
+    "tick",
+    "ontick",
+    "interval",
+    "continuous",
+    "monitoring",
+    "stefftek"
+  ]
 }
