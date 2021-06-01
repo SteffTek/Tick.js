@@ -13,7 +13,7 @@ npm i W.I.P
 ```
 ***or*** - script tag for the browser
 ```html
-<script src="https://unpkg.com/WIP@latest/Tick.js" type="text/javascript"></script>
+<script src="https://unpkg.com/@stefftek/tick.js@latest/Tick.js" type="text/javascript"></script>
 ```
 
 # Usage
