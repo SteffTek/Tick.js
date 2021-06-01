@@ -66,3 +66,6 @@ tickSystem.tickTime : Number  // Time in ms per tick
 ```
 
 ### Initial Testing seemed stable and performant! ❤
+<br>
+
+# Performance Monitoring

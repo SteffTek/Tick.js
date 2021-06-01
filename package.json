@@ -1,0 +1,19 @@
+{
+  "name": "tick.js",
+  "version": "1.0.0",
+  "main": "test.js",
+  "scripts": {
+    "test": "nodemon test.js"
+  },
+  "author": "SteffTek",
+  "license": "SEE LICENSE IN LICENSE FILE",
+  "description": "Tick System for performing tasks X times a second.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SteffTek/Tick.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SteffTek/Tick.js/issues"
+  },
+  "homepage": "https://github.com/SteffTek/Tick.js#readme"
+}
