@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "main": "test.js",
   "scripts": {
-    "test": "nodemon test.js"
+    "test": "node test.js"
   },
   "author": "SteffTek",
   "license": "SEE LICENSE IN LICENSE FILE",
