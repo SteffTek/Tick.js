@@ -11,10 +11,9 @@ NodeJS Installation
 ```
 npm i W.I.P
 ```
-- or -
-As script for the browser
+***or*** - script tag for the browser
 ```html
-<script src="https://unpkg.com/browse/PACKAGE@latest/Tick.js" type="text/javascript"></script>
+<script src="https://unpkg.com/WIP@latest/Tick.js" type="text/javascript"></script>
 ```
 
 # Usage
