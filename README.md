@@ -69,3 +69,28 @@ tickSystem.tickTime : Number  // Time in ms per tick
 <br>
 
 # Performance Monitoring
+### ⚠️Warning: May impact performance⚠️
+To measure the performance of the tick system, you can enable performance monitoring.
+```js
+tickSystem.monitor(true);
+```
+To Disable, use `.monitor(false);`
+
+Performance Reports can be collected either manual or for
+- the last frame
+- the last second
+- and for the last 5 seconds
+
+combined.
+
+To collect performance reports, either use
+```js
+tickSystem.performanceMonitor.report()
+```
+for a group report, or
+```js
+tickSystem.performanceMonitor.singleReport(10) // Tick count
+```
+for a report of the size you prefer.
+
+### Please note: you can only collect `Tick Rate * 5` on a single report.
