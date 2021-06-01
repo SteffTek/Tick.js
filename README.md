@@ -47,6 +47,10 @@ tickSystem.stop();
 tickSystem.start();
 ```
 
+# What is a tick rate?
+**Tick Rate** defines how many times a second, the onTick function will execute. A much more simple explaination: Tick Rate is __kinda__ like FPS in Games. More FPS means smoother animations or physics interpolation, but the cost is a higher usage of system resources.
+
+
 # Variables
 ```js
 tickSystem.callbacks : Array  // All Callbacks that are registered
