@@ -5,8 +5,14 @@
 **Tick.js** was created during a webex call in which we learned to use git __like I didn't already knew__, so because I got bored and I needed a tick based system for one of my projects, Tick.js was born.
 
 # Installation
+NodeJS Installation
 ```
 npm i W.I.P
+```
+- or -
+As script for the browser
+```html
+<script src="https://unpkg.com/browse/PACKAGE@latest/Tick.js" type="text/javascript"></script>
 ```
 
 # Usage
