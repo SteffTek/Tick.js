@@ -13,13 +13,13 @@ npm i @stefftek/tick.js
 ```
 ***or*** - script tag for the browser
 ```html
-<script src="https://unpkg.com/@stefftek/tick.js@latest/Tick.js" type="text/javascript"></script>
+<script src="https://unpkg.com/@stefftek/tick.js@latest/TickSystem.js" type="text/javascript"></script>
 ```
 
 # Usage
 ```js
 /* Import Tick.js */
-const TickSystem = require("Tick.js");
+const TickSystem = require("@stefftek/tick.js");
 
 /* Create New Tick System */
 /* Starts Tick System aswell */

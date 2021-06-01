@@ -1,7 +1,7 @@
 {
   "name": "@stefftek/tick.js",
   "version": "1.0.0",
-  "main": "test.js",
+  "main": "TickSystem.js",
   "scripts": {
     "test": "node test.js"
   },
