@@ -9,7 +9,7 @@
 # Installation
 NodeJS Installation
 ```
-npm i W.I.P
+npm i @stefftek/tick.js
 ```
 ***or*** - script tag for the browser
 ```html
