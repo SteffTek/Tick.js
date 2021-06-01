@@ -65,11 +65,12 @@ tickSystem.lastTick : Number  // Timestamp in ms of the last executed tick
 tickSystem.tickTime : Number  // Time in ms per tick
 ```
 
-### Initial Testing seemed stable and performant! ❤
+### Initial Testing seemed stable and perform well! ❤
 <br>
 
 # Performance Monitoring
-### ⚠️Warning: May impact performance⚠️
+### ⚠️Warning: May impact performance⚠️ Yes... Seriously
+
 To measure the performance of the tick system, you can enable performance monitoring.
 ```js
 tickSystem.monitor(true);
