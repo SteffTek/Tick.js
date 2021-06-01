@@ -1,5 +1,7 @@
+[![Discord](https://img.shields.io/discord/803319138260090910?color=%237289DA&label=Discord)](https://discord.gg/Qgv8DSMYM3) [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/stefftek/tick.js)](https://github.com/SteffTek/tick.js) [![GitHub issues](https://img.shields.io/github/issues/stefftek/tick.js)](https://github.com/SteffTek/tick.js/issues)
+
 # Tick.js
-**Execute tasks multiple times a second based on a tick count.**
+**Execute tasks multiple times a second based on a tick count. Tick.js helps to maintain a clean code without the need of thousands of setIntervals and it's easy to use!**
 
 # About
 **Tick.js** was created during a webex call in which we learned to use git __like I didn't already knew__, so because I got bored and I needed a tick based system for one of my projects, Tick.js was born.
