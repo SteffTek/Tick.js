@@ -1,4 +1,4 @@
-[![Discord](https://img.shields.io/discord/803319138260090910?color=%237289DA&label=Discord)](https://discord.gg/Qgv8DSMYM3) [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/stefftek/tick.js)](https://github.com/SteffTek/tick.js) [![GitHub issues](https://img.shields.io/github/issues/stefftek/tick.js)](https://github.com/SteffTek/tick.js/issues)
+[![Discord](https://img.shields.io/discord/803319138260090910?color=%237289DA&label=Discord)](https://discord.gg/Qgv8DSMYM3) ![License](https://img.shields.io/github/license/SteffTek/Tick.js) [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/stefftek/tick.js)](https://github.com/SteffTek/tick.js) [![GitHub issues](https://img.shields.io/github/issues/stefftek/tick.js)](https://github.com/SteffTek/tick.js/issues) ![Build](https://img.shields.io/github/workflow/status/SteffTek/Tick.js/Node.js%20Package)
 
 # Tick.js
 **Execute tasks multiple times a second based on a tick count. Tick.js helps to maintain a clean code without the need of thousands of setIntervals and it's easy to use!**
