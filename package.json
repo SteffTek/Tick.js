@@ -1,5 +1,5 @@
 {
-  "name": "@stefftek/tick",
+  "name": "@stefftek/tick.js",
   "version": "1.0.3",
   "main": "TickSystem.js",
   "types": "types/TickSystem.d.ts",
