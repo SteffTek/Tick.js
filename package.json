@@ -1,6 +1,6 @@
 {
   "name": "@stefftek/tick.js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "TickSystem.js",
   "types": "types/TickSystem.d.ts",
   "scripts": {
