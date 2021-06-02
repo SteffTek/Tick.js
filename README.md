@@ -6,6 +6,9 @@
 # About
 **Tick.js** was created during a webex call in which we learned to use git __like I didn't already knew__, so because I got bored and I needed a tick based system for one of my projects, Tick.js was born.
 
+## New in 1.0.3
+Tick.js now officially supports Typescript. **Thanks Typescript for auto-generating a .d.ts file for me!**
+
 # Installation
 NodeJS Installation
 ```
@@ -17,10 +20,19 @@ npm i @stefftek/tick.js
 ```
 
 # Usage
+## Import
+with Common JS
 ```js
 /* Import Tick.js */
 const TickSystem = require("@stefftek/tick.js");
-
+```
+**or** - TypeScript Import
+```js
+/* Import Tick.js */
+import TickSystem from "@stefftek/tick.js";
+```
+## Using the Class
+```js
 /* Create New Tick System */
 /* Starts Tick System aswell */
 /* Default Tickrate: 64 */
@@ -63,6 +75,8 @@ tickSystem.tickDelta : Number   // Latency between the ticks in seconds
 
 tickSystem.lastTick : Number  // Timestamp in ms of the last executed tick
 tickSystem.tickTime : Number  // Time in ms per tick
+
+tickSystem.performanceMonitor : PerformanceMonitor // Performance Monitor if enabled
 ```
 
 ### Initial Testing seemed stable and perform well! ❤

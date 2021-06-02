@@ -2,13 +2,8 @@
  *
  * Tick System for executing Tasks at a specific tick rate.
  *
- * @var {array}  callbacks all functions that should be executed on tick
- * @var {number} tickRate how many ticks in a second
- * @var {number} currentTick current tick of the second
- * @var {number} tickLatency time in ms since last tick
- * @var {number} tickDelta time in seconds since last tick
- * @var {number} lastTick time stamp of last tick
- * @var {number} tickTime length of tick in ms
+ * @author SteffTek
+ * @since 1.0.0
  *
  */
 class TickSystem {
@@ -18,6 +13,15 @@ class TickSystem {
      * Creates a new Tick System.
      *
      * @param {number} tickRate how many times per second a tick is executed
+     *
+     * @var {array}  callbacks all functions that should be executed on tick
+     * @var {number} tickRate how many ticks in a second
+     * @var {number} currentTick current tick of the second
+     * @var {number} tickLatency time in ms since last tick
+     * @var {number} tickDelta time in seconds since last tick
+     * @var {number} lastTick time stamp of last tick
+     * @var {number} tickTime length of tick in ms
+     * @var {PerformanceMonitor} performanceMonitor monitors performance of ticks
      *
      */
     constructor(tickRate = 64) {
@@ -93,7 +97,7 @@ class TickSystem {
         this.lastTick = timeStamp; // SET THIS TICKS TIMESTAMP
 
         // SEND TO MONITOR
-        if(this.performanceMonitor) this.performanceMonitor.capture();
+        if (this.performanceMonitor) this.performanceMonitor.capture();
     }
 
     /**
@@ -142,7 +146,7 @@ class TickSystem {
     monitor(doMonitor = false) {
 
         // DISABLE MONITORING
-        if(!doMonitor) {
+        if (!doMonitor) {
             this.performanceMonitor = null;
             return;
         }
@@ -179,7 +183,7 @@ class PerformanceMonitor {
         this.tickStore.unshift(this.tickSystem.lastTick);
 
         // REMOVE TOO OLD TICKS
-        if(this.tickStore.length > this.tickSystem.tickRate * 5) {
+        if (this.tickStore.length > this.tickSystem.tickRate * 5) {
             this.tickStore.pop();
         }
     }
@@ -215,23 +219,23 @@ class PerformanceMonitor {
     singleReport(size) {
 
         // FALLBACK SIZE
-        if(size > this.tickStore.length) {
+        if (size > this.tickStore.length) {
             size = this.tickStore.length;
         }
 
         // FALLBACK MIN SIZE
-        if(this.tickStore.length <= 2) {
+        if (this.tickStore.length <= 2) {
             return null;
         }
 
         let percentages = [];
 
         // CYCLE
-        for(let i = 0; i < size - 1; i++) {
+        for (let i = 0; i < size - 1; i++) {
 
             // GET TIMINGS
             let tStart = this.tickStore[i];
-            let tEnd = this.tickStore[i+1];
+            let tEnd = this.tickStore[i + 1];
 
             // CALCULATE PERCENT TO LAST TICK
             let time = tStart - tEnd;
@@ -243,7 +247,7 @@ class PerformanceMonitor {
 
         let total = 0;
         // GET AVERAGE
-        for(var i = 0; i < percentages.length; i++) {
+        for (var i = 0; i < percentages.length; i++) {
             total += percentages[i];
         }
         var avg = total / percentages.length;

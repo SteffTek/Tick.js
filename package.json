@@ -1,12 +1,14 @@
 {
-  "name": "@stefftek/tick.js",
-  "version": "1.0.2",
+  "name": "@stefftek/tick",
+  "version": "1.0.3",
   "main": "TickSystem.js",
+  "types": "types/TickSystem.d.ts",
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "dts": "tsc TickSystem.js --declaration --allowJs --emitDeclarationOnly --outDir types"
   },
   "author": "SteffTek",
-  "license": "SEE LICENSE IN LICENSE FILE",
+  "license": "Apache-2.0",
   "description": "Tick System for performing tasks X times a second.",
   "repository": {
     "type": "git",
@@ -26,6 +28,7 @@
     "interval",
     "continuous",
     "monitoring",
-    "stefftek"
+    "stefftek",
+    "typescript"
   ]
 }
