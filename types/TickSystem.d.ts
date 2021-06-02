@@ -4,16 +4,18 @@ export = TickSystem;
  * Tick System for executing Tasks at a specific tick rate.
  *
  * @author SteffTek
- * @since 1.0.0
+ * @class
+ * @public
  *
  */
 declare class TickSystem {
     /**
      *
      * Creates a new Tick System.
+     * @since 1.0.0
+     * @constructor
      *
      * @param {number} tickRate how many times per second a tick is executed
-     *
      * @var {array}  callbacks all functions that should be executed on tick
      * @var {number} tickRate how many ticks in a second
      * @var {number} currentTick current tick of the second
@@ -80,12 +82,15 @@ declare class TickSystem {
 /**
  *
  * Performance Monitor for Tick System
+ * @class PerformanceMonitor
  *
  */
 declare class PerformanceMonitor {
     /**
      *
      * Creates a new performance monitor
+     * @since 1.0.0
+     *
      * @param {TickSystem} tickSystem monitored object
      *
      */

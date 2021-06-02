@@ -20,7 +20,7 @@ npm i @stefftek/tick.js
 ```
 
 # Usage
-## Import
+### Import
 with Common JS
 ```js
 /* Import Tick.js */
@@ -31,7 +31,7 @@ const TickSystem = require("@stefftek/tick.js");
 /* Import Tick.js */
 import TickSystem from "@stefftek/tick.js";
 ```
-## Using the Class
+### Using the Class
 ```js
 /* Create New Tick System */
 /* Starts Tick System aswell */
