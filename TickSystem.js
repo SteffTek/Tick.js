@@ -76,6 +76,60 @@ class TickSystem {
 
     /**
      *
+     * Executes callback after x seconds
+     * @since 1.1.0
+     *
+     * @param {number} seconds amount of seconds to wait
+     * @param {function} callback callback to execute
+     *
+     */
+    executeAfterSeconds(seconds, callback) {
+        // CALCULATE TICKS
+        var ticks = seconds * this.tickRate;
+
+        // SEND TO EXECUTION
+        this.executeAfter(ticks, callback);
+    }
+
+    /**
+     *
+     * Executes callback after x ticks
+     * @since 1.1.0
+     *
+     * @param {number} ticks amount of ticks to wait
+     * @param {function} callback callback to execute
+     *
+     */
+    executeAfter(ticks, callback) {
+
+        // SAVE CLASS
+        const tickSystem = this;
+
+        // WAIT FUNCTION
+        var count = 0;
+        const wait = function() {
+
+            // EXECUTE CALLBACK
+            if(count >= ticks) {
+                // REMOVE TICK
+                tickSystem.offTick(wait);
+
+                // EXECUTE CALLBACK
+                callback();
+
+                return;
+            }
+
+            // INCREASE COUNT
+            count++;
+        }
+
+        // START TICKING
+        this.onTick(wait);
+    }
+
+    /**
+     *
      * Executes a tick.
      *
      */

@@ -6,8 +6,8 @@
 # About
 **Tick.js** was created during a webex call in which we learned to use git __like I didn't already knew__, so because I got bored and I needed a tick based system for one of my projects, Tick.js was born.
 
-## New in 1.0.3
-Tick.js now officially supports Typescript. **Thanks Typescript for auto-generating a .d.ts file for me!**
+## New in 1.1.0
+You can now execute functions after x amount of ticks.
 
 # Installation
 NodeJS Installation
@@ -58,6 +58,19 @@ tickSystem.stop();
 /* Start Ticking */
 /* Only needed if stopped */
 tickSystem.start();
+```
+
+### Executing functions after x amount of ticks (added in 1.1.0):
+```js
+/* Wait 100 ticks till execution */
+tickSystem.executeAfter(100, () => {
+  console.log("I ran after 100 ticks!");
+});
+
+/* Wait 3 seconds till execution */
+tickSystem.executeAfterSeconds(3, () => {
+  console.log("I ran after 3 seconds!");
+});
 ```
 
 # What is a tick rate?

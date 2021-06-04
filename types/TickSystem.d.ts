@@ -54,6 +54,26 @@ declare class TickSystem {
     offTick(callback: Function): void;
     /**
      *
+     * Executes callback after x seconds
+     * @since 1.1.0
+     *
+     * @param {number} seconds amount of seconds to wait
+     * @param {function} callback callback to execute
+     *
+     */
+    executeAfterSeconds(seconds: number, callback: Function): void;
+    /**
+     *
+     * Executes callback after x ticks
+     * @since 1.1.0
+     *
+     * @param {number} ticks amount of ticks to wait
+     * @param {function} callback callback to execute
+     *
+     */
+    executeAfter(ticks: number, callback: Function): void;
+    /**
+     *
      * Executes a tick.
      *
      */
