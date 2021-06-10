@@ -1,3 +1,4 @@
+"use strict";
 /**
  *
  * Tick System for executing Tasks at a specific tick rate.
@@ -8,7 +9,6 @@
  *
  */
 class TickSystem {
-
     /**
      *
      * Creates a new Tick System.
@@ -26,7 +26,7 @@ class TickSystem {
      * @var {PerformanceMonitor} performanceMonitor monitors performance of ticks
      *
      */
-    constructor(tickRate = 64) {
+    constructor(tickRate = 64){
         // STORE THE FUNCTIONS TO EXECUTE
         this.callbacks = [];
 
@@ -54,7 +54,7 @@ class TickSystem {
      * @param {function} callback register function to tick system
      *
      */
-    onTick(callback) {
+    onTick(callback){
         // ADD CALLBACK FROM TICK
         this.callbacks.push(callback);
     }
@@ -66,10 +66,10 @@ class TickSystem {
      * @param {function} callback unregister function to tick system
      *
      */
-    offTick(callback) {
+    offTick(callback){
         // REMOVE CALLBACK FROM TICK
         const index = this.callbacks.indexOf(callback);
-        if (index > -1) {
+        if (index > -1){
             this.callbacks.splice(index, 1);
         }
     }
@@ -83,9 +83,9 @@ class TickSystem {
      * @param {function} callback callback to execute
      *
      */
-    executeAfterSeconds(seconds, callback) {
+    executeAfterSeconds(seconds, callback){
         // CALCULATE TICKS
-        var ticks = seconds * this.tickRate;
+        const ticks = seconds * this.tickRate;
 
         // SEND TO EXECUTION
         this.executeAfter(ticks, callback);
@@ -100,17 +100,15 @@ class TickSystem {
      * @param {function} callback callback to execute
      *
      */
-    executeAfter(ticks, callback) {
-
+    executeAfter(ticks, callback){
         // SAVE CLASS
         const tickSystem = this;
 
         // WAIT FUNCTION
-        var count = 0;
-        const wait = function() {
-
+        let count = 0;
+        const wait = function(){
             // EXECUTE CALLBACK
-            if(count >= ticks) {
+            if(count >= ticks){
                 // REMOVE TICK
                 tickSystem.offTick(wait);
 
@@ -122,7 +120,7 @@ class TickSystem {
 
             // INCREASE COUNT
             count++;
-        }
+        };
 
         // START TICKING
         this.onTick(wait);
@@ -133,7 +131,7 @@ class TickSystem {
      * Executes a tick.
      *
      */
-    tick() {
+    tick(){
         // EXECUTE ALL CALLBACKS
         const callbacks = this.callbacks.slice(0);
         callbacks.forEach((callback) => {
@@ -142,7 +140,7 @@ class TickSystem {
 
         // SET CURRENT TICK
         this.currentTick++;
-        if (this.currentTick + 1 > this.tickRate) {
+        if (this.currentTick + 1 > this.tickRate){
             this.currentTick = 0;
         }
 
@@ -161,9 +159,9 @@ class TickSystem {
      * Stop tick execution
      *
      */
-    start() {
+    start(){
         // CHECK FOR NON INTERVAL
-        if (this.interval) {
+        if (this.interval){
             return;
         }
 
@@ -179,16 +177,16 @@ class TickSystem {
      * Stop tick execution
      *
      */
-    stop() {
+    stop(){
         // CHECK IF INTERVAL EXISTS
-        if (!this.interval) {
+        if (!this.interval){
             return;
         }
 
         // REMOVE TICK COUNTER
         clearInterval(this.interval);
 
-        //RESET INTERVAL
+        // RESET INTERVAL
         this.interval = null;
     }
 
@@ -199,15 +197,15 @@ class TickSystem {
      * @param {boolean} doMonitor monitor the performance per tick
      *
      */
-    monitor(doMonitor = false) {
-
+    monitor(doMonitor = false){
         // DISABLE MONITORING
-        if (!doMonitor) {
+        if (!doMonitor){
             this.performanceMonitor = null;
             return;
         }
 
         // ENABLE MONITORING
+        // eslint-disable-next-line no-use-before-define
         this.performanceMonitor = new PerformanceMonitor(this);
     }
 }
@@ -219,7 +217,6 @@ class TickSystem {
  *
  */
 class PerformanceMonitor {
-
     /**
      *
      * Creates a new performance monitor
@@ -228,7 +225,7 @@ class PerformanceMonitor {
      * @param {TickSystem} tickSystem monitored object
      *
      */
-    constructor(tickSystem) {
+    constructor(tickSystem){
         this.tickStore = [];
         this.tickSystem = tickSystem;
     }
@@ -237,12 +234,12 @@ class PerformanceMonitor {
      * Monitors the Performance
      *
      */
-    capture() {
+    capture(){
         // ADD TIMESTAMP OF LAST TICK TO STORE STORE
         this.tickStore.unshift(this.tickSystem.lastTick);
 
         // REMOVE TOO OLD TICKS
-        if (this.tickStore.length > this.tickSystem.tickRate * 5) {
+        if (this.tickStore.length > this.tickSystem.tickRate * 5){
             this.tickStore.pop();
         }
     }
@@ -254,13 +251,13 @@ class PerformanceMonitor {
      * @return {object} performance report of last Tick, past second and past 5 seconds in percent
      *
      */
-    report() {
+    report(){
         // CREATE OBJECT
         let report = {
             tick: this.singleReport(2),
             second: this.singleReport(this.tickSystem.tickRate),
-            interval: this.singleReport(this.tickSystem.tickRate * 5),
-        }
+            interval: this.singleReport(this.tickSystem.tickRate * 5)
+        };
 
         // RETURN REPORT
         return report;
@@ -270,28 +267,27 @@ class PerformanceMonitor {
      *
      * Monitors the Performance
      *
-     * @param {number} size size of ticks to analyze
+     * @param {number} length amount of ticks to analyze
      *
      * @return {number} performance of last x frames in percent
      *
      */
-    singleReport(size) {
-
+    singleReport(length){
         // FALLBACK SIZE
-        if (size > this.tickStore.length) {
+        let size = length;
+        if (size > this.tickStore.length){
             size = this.tickStore.length;
         }
 
         // FALLBACK MIN SIZE
-        if (this.tickStore.length <= 2) {
+        if (this.tickStore.length <= 2){
             return null;
         }
 
         let percentages = [];
 
         // CYCLE
-        for (let i = 0; i < size - 1; i++) {
-
+        for (let i = 0; i < size - 1; i++){
             // GET TIMINGS
             let tStart = this.tickStore[i];
             let tEnd = this.tickStore[i + 1];
@@ -306,10 +302,10 @@ class PerformanceMonitor {
 
         let total = 0;
         // GET AVERAGE
-        for (var i = 0; i < percentages.length; i++) {
+        for (let i = 0; i < percentages.length; i++){
             total += percentages[i];
         }
-        var avg = total / percentages.length;
+        let avg = total / percentages.length;
 
         // CONVERT TO READABLE PERCENT
         avg *= 100;
@@ -324,6 +320,6 @@ class PerformanceMonitor {
  * Export to NodeJS if inside of NodeJS
  *
  */
-if (typeof module !== "undefined" && module.exports) {
+if (typeof module !== "undefined" && module.exports){
     module.exports = TickSystem;
 }

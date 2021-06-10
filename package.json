@@ -1,6 +1,6 @@
 {
   "name": "@stefftek/tick.js",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "TickSystem.js",
   "types": "types/TickSystem.d.ts",
   "scripts": {
@@ -26,9 +26,19 @@
     "tick",
     "ontick",
     "interval",
+    "setInterval",
+    "timeout",
+    "setTimeout",
+    "execute",
+    "executeAfter",
     "continuous",
     "monitoring",
     "stefftek",
     "typescript"
-  ]
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.14.5",
+    "@babel/eslint-parser": "^7.14.5",
+    "eslint": "^7.28.0"
+  }
 }

@@ -135,10 +135,10 @@ declare class PerformanceMonitor {
      *
      * Monitors the Performance
      *
-     * @param {number} size size of ticks to analyze
+     * @param {number} length amount of ticks to analyze
      *
      * @return {number} performance of last x frames in percent
      *
      */
-    singleReport(size: number): number;
+    singleReport(length: number): number;
 }

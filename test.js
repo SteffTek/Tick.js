@@ -1,3 +1,5 @@
+"use strict";
+
 const TickSystem = require("./TickSystem.js");
 const tickSystem = new TickSystem(64);
 
